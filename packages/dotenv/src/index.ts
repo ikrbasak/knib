@@ -1,17 +1,20 @@
 import { config as dec, DotenvConfigOptions } from 'dotenv';
 
-export type ConfigOption = Pick<DotenvConfigOptions, 'debug' | 'quiet' | 'override' | 'encoding'>;
+export type ConfigOption = Pick<
+  DotenvConfigOptions,
+  'debug' | 'quiet' | 'override' | 'encoding'
+> & { env: string | undefined };
 
 export const config = (
-  ne = process.env.NODE_ENV,
-  { quiet, debug, override, encoding }: ConfigOption = {
+  { quiet, debug, override, encoding, env }: ConfigOption = {
     quiet: true,
     debug: false,
     override: true,
+    env: process.env.NODE_ENV,
   },
 ) =>
   dec({
-    path: ['.env.local', '.env', `.env.${ne}.local`, `.env.${ne}`],
+    path: ['.env.local', '.env', `.env.${env}.local`, `.env.${env}`],
     override,
     quiet,
     debug,
