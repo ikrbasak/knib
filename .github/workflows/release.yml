@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
 
+# Disable lefthook git hooks in CI: the version-packages commit and the
+# push made by changesets/action must not trigger pre-commit / pre-push.
+env:
+  LEFTHOOK: '0'
+
 concurrency:
   group: release-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
@@ -20,6 +25,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v6
@@ -32,11 +41,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build packages
+        run: pnpm run build
+
       - name: Create release PR or publish
         uses: changesets/action@v1
         with:
-          version: pnpm run version
-          publish: pnpm run release
+          version: changeset version && pnpm run fmt
+          publish: changeset publish
           commit: 'chore: version packages'
           title: 'chore: version packages'
         env:
