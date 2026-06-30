@@ -1,5 +1,11 @@
 # @knib/dotenv
 
+## 0.1.1
+
+### Patch Changes
+
+- ee024b9: Move package publishing to OIDC-based npm trusted publishing (tokenless), with automatic provenance.
+
 ## 0.1.0
 
 ### Minor Changes
