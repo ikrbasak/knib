@@ -1,0 +1,28 @@
+output:
+  - failure
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: format
+      run: pnpm run fmt {staged_files}
+      stage_fixed: true
+    - name: build
+      run: pnpm run build
+    - name: types
+      run: pnpm run tsc
+
+commit-msg:
+  jobs:
+    - name: commitlint
+      run: pnpm exec commitlint -s -e {1}
+
+pre-push:
+  parallel: true
+  jobs:
+    - name: format
+      run: pnpm run fmt:c
+    - name: build
+      run: pnpm run build
+    - name: types
+      run: pnpm run tsc
