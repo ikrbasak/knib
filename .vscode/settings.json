@@ -1,0 +1,33 @@
+{
+  "cSpell.words": [],
+  "npm.packageManager": "pnpm",
+  "js/ts.format.semicolons": "insert",
+  "js/ts.inlayHints.enumMemberValues.enabled": true,
+  "js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
+  "js/ts.inlayHints.variableTypes.enabled": true,
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+  "js/ts.preferences.quoteStyle": "single",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  "js/ts.preferences.includePackageJsonAutoImports": "on",
+  "editor.wordWrapColumn": 120,
+  "editor.wordWrap": "off",
+  "editor.renderFinalNewline": "on",
+  "editor.inlayHints.enabled": "on",
+  "editor.trimAutoWhitespace": true,
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "oxc.fmt.configPath": "oxfmt.config.ts",
+  "oxc.enable": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
+  "js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
+  "js/ts.tsserver.log": "off",
+  "editor.formatOnSaveMode": "file",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never",
+    "source.fixAll.oxc": "always",
+    "source.fixAll": "always"
+  }
+}
