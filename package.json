@@ -8,9 +8,13 @@
     "build": "turbo run build",
     "fmt": "oxfmt --no-error-on-unmatched-pattern",
     "fmt:c": "oxfmt --no-error-on-unmatched-pattern --check",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "turbo run build && changeset publish",
     "prepare": "lefthook install || true"
   },
   "devDependencies": {
+    "@changesets/cli": "catalog:",
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
     "@commitlint/types": "catalog:",
