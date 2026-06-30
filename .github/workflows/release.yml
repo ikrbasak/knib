@@ -47,8 +47,8 @@ jobs:
       - name: Create release PR or publish
         uses: changesets/action@v1
         with:
-          version: changeset version && pnpm run fmt
-          publish: changeset publish
+          version: pnpm exec changeset version && pnpm run fmt
+          publish: pnpm exec changeset publish
           commit: 'chore: version packages'
           title: 'chore: version packages'
         env:
