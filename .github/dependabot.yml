@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: npm # covers pnpm via pnpm-lock.yaml and the workspace catalog
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: chore # keep Dependabot PRs Conventional Commits compliant
+      include: scope
+    groups:
+      pnpm-minor-patch:
+        applies-to: version-updates
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
