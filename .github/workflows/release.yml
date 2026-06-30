@@ -11,7 +11,7 @@ concurrency:
 permissions:
   contents: write # create tags and GitHub releases
   pull-requests: write # open and update the "Version Packages" PR
-  id-token: write # npm provenance
+  id-token: write # OIDC token exchange for npm trusted publishing
 
 jobs:
   release:
@@ -28,7 +28,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: .node-version
-          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -42,6 +41,3 @@ jobs:
           title: 'chore: version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: 'true'
