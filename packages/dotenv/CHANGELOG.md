@@ -1,5 +1,14 @@
 # @knib/dotenv
 
+## 0.2.0
+
+### Minor Changes
+
+- beaf68b: Replace the positional `ne` environment argument with an `env` field on the
+  options object. `config` now takes a single `ConfigOption` argument, e.g.
+  `config({ env: 'production', override: false })` instead of
+  `config('production', { override: false })`.
+
 ## 0.1.1
 
 ### Patch Changes
