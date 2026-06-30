@@ -1,0 +1,15 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "globalEnv": ["NODE_ENV"],
+  "cacheMaxAge": "7d",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^tsc", "^build"],
+      "outputs": ["dist/"]
+    },
+    "tsc": {
+      "dependsOn": ["^tsc"],
+      "outputs": [".tsbuildinfo"]
+    }
+  }
+}

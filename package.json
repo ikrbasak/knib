@@ -1,0 +1,23 @@
+{
+  "name": "@knib/root",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "tsc": "turbo run tsc",
+    "build": "turbo run build",
+    "fmt": "oxfmt --no-error-on-unmatched-pattern",
+    "fmt:c": "oxfmt --no-error-on-unmatched-pattern --check",
+    "prepare": "lefthook install || true"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
+    "@commitlint/types": "catalog:",
+    "lefthook": "catalog:",
+    "oxfmt": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:"
+  },
+  "packageManager": "pnpm@11.9.0"
+}
