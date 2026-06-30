@@ -1,11 +1,38 @@
 {
   "name": "@knib/dotenv",
   "version": "0.0.0",
-  "private": true,
+  "description": "A thin, opinionated wrapper around dotenv that loads layered .env files based on NODE_ENV.",
+  "keywords": [
+    "NODE_ENV",
+    "config",
+    "configuration",
+    "dotenv",
+    "env",
+    "environment",
+    "knib"
+  ],
+  "homepage": "https://github.com/ikrbasak/knib/tree/main/packages/dotenv#readme",
+  "bugs": {
+    "url": "https://github.com/ikrbasak/knib/issues"
+  },
+  "license": "MIT",
+  "author": "Krishna Basak <ikrbasak@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikrbasak/knib.git",
+    "directory": "packages/dotenv"
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsdown",
