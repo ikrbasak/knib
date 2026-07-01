@@ -1,0 +1,61 @@
+{
+  "name": "@knib/adrin",
+  "version": "0.0.1",
+  "description": "ADR (Architecture Decision Record) management CLI",
+  "keywords": [
+    "adr",
+    "architecture",
+    "architecture-decision-record",
+    "cli",
+    "decision-record",
+    "documentation",
+    "markdown",
+    "tui"
+  ],
+  "homepage": "https://github.com/ikrbasak/knib/tree/main/packages/adrin#readme",
+  "bugs": {
+    "url": "https://github.com/ikrbasak/knib/issues"
+  },
+  "license": "MIT",
+  "author": "Krishna Basak <ikrbasak@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikrbasak/knib.git",
+    "directory": "packages/adrin"
+  },
+  "bin": {
+    "adrin": "./dist/cli.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/cli.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "@11ty/gray-matter": "catalog:",
+    "chalk": "catalog:",
+    "commander": "catalog:",
+    "ink": "catalog:",
+    "react": "catalog:",
+    "wrap-ansi": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
