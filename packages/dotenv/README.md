@@ -25,33 +25,34 @@ import { config } from '@knib/dotenv';
 // Load env files for the current process.env.NODE_ENV
 config();
 
-// Target a specific environment explicitly
-config({ env: 'production' });
+// Target a specific mode explicitly
+config({ mode: 'production' });
 
 // Override the defaults
-config({ env: 'test', override: false, debug: true, quiet: false });
+config({ mode: 'test', override: false, debug: true, quiet: false });
 ```
 
 ## How files are loaded
 
-`config({ env })` loads the following files, in this order, where `env` defaults
-to `process.env.NODE_ENV`:
+`config({ mode })` loads the following files, in this order (matching
+[Vite's env file ordering](https://vite.dev/guide/env-and-mode#env-files)),
+where `mode` defaults to `process.env.NODE_ENV`:
 
-1. `.env.local`
-2. `.env`
-3. `.env.${env}.local`
-4. `.env.${env}`
+1. `.env`
+2. `.env.local`
+3. `.env.${mode}`
+4. `.env.${mode}.local`
 
 Because `override` defaults to `true`, values from files loaded **later** in the
 list replace earlier ones. The effective precedence, from highest to lowest, is
 therefore:
 
-| Priority | File                | Notes                                |
-| -------- | ------------------- | ------------------------------------ |
-| 1        | `.env.${env}`       | Environment-specific values          |
-| 2        | `.env.${env}.local` | Environment-specific local overrides |
-| 3        | `.env`              | Shared defaults                      |
-| 4        | `.env.local`        | Local overrides                      |
+| Priority | File                 | Notes                         |
+| -------- | -------------------- | ----------------------------- |
+| 1        | `.env.${mode}.local` | Mode-specific local overrides |
+| 2        | `.env.${mode}`       | Mode-specific values          |
+| 3        | `.env.local`         | Local overrides               |
+| 4        | `.env`               | Shared defaults               |
 
 > Missing files are skipped silently — you only need the ones you use.
 
@@ -61,25 +62,25 @@ therefore:
 
 Accepts a single `ConfigOption` object.
 
-| Field      | Type                  | Default                | Description                                          |
-| ---------- | --------------------- | ---------------------- | ---------------------------------------------------- |
-| `env`      | `string \| undefined` | `process.env.NODE_ENV` | Environment name used to resolve env-specific files. |
-| `quiet`    | `boolean`             | `true`                 | Suppress `dotenv`'s logging.                         |
-| `debug`    | `boolean`             | `false`                | Enable `dotenv`'s debug logging.                     |
-| `override` | `boolean`             | `true`                 | Let later files override earlier ones.               |
-| `encoding` | `string`              | —                      | Encoding used to read the env files.                 |
+| Field      | Type                  | Default                | Description                                    |
+| ---------- | --------------------- | ---------------------- | ---------------------------------------------- |
+| `mode`     | `string \| undefined` | `process.env.NODE_ENV` | Mode name used to resolve mode-specific files. |
+| `quiet`    | `boolean`             | `true`                 | Suppress `dotenv`'s logging.                   |
+| `debug`    | `boolean`             | `false`                | Enable `dotenv`'s debug logging.               |
+| `override` | `boolean`             | `true`                 | Let later files override earlier ones.         |
+| `encoding` | `string`              | —                      | Encoding used to read the env files.           |
 
 Returns the result of `dotenv`'s `config()` (`{ parsed, error }`).
 
 > Note: the default `options` object only applies when the argument is omitted
-> entirely. When you pass a partial object, unspecified keys (including `env`)
+> entirely. When you pass a partial object, unspecified keys (including `mode`)
 > fall back to `dotenv`'s own defaults rather than the ones above.
 
 ### `ConfigOption`
 
 ```ts
 type ConfigOption = Pick<DotenvConfigOptions, 'debug' | 'quiet' | 'override' | 'encoding'> & {
-  env: string | undefined;
+  mode?: string;
 };
 ```
 
