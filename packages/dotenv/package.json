@@ -1,6 +1,6 @@
 {
   "name": "@knib/dotenv",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A thin, opinionated wrapper around dotenv that loads layered .env files based on NODE_ENV.",
   "keywords": [
     "NODE_ENV",
