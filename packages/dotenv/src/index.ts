@@ -14,7 +14,7 @@ export const config = ({
   override = true,
   encoding,
   mode = process.env.NODE_ENV,
-  cwd = path.dirname(pwd()),
+  cwd = pwd(),
 }: ConfigOption = {}) =>
   dec({
     path: ['.env', '.env.local', `.env.${mode}`, `.env.${mode}.local`].map((p) =>

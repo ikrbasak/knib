@@ -30,13 +30,17 @@ config({ mode: 'production' });
 
 // Override the defaults
 config({ mode: 'test', override: false, debug: true, quiet: false });
+
+// Resolve .env files relative to a different directory
+config({ cwd: '/path/to/project' });
 ```
 
 ## How files are loaded
 
-`config({ mode })` loads the following files, in this order (matching
+`config({ mode, cwd })` loads the following files, in this order (matching
 [Vite's env file ordering](https://vite.dev/guide/env-and-mode#env-files)),
-where `mode` defaults to `process.env.NODE_ENV`:
+where `mode` defaults to `process.env.NODE_ENV` and `cwd` defaults to
+`process.cwd()`:
 
 1. `.env`
 2. `.env.local`
@@ -65,6 +69,7 @@ Accepts a single `ConfigOption` object.
 | Field      | Type                  | Default                | Description                                    |
 | ---------- | --------------------- | ---------------------- | ---------------------------------------------- |
 | `mode`     | `string \| undefined` | `process.env.NODE_ENV` | Mode name used to resolve mode-specific files. |
+| `cwd`      | `string`              | `process.cwd()`        | Directory the env files are resolved against.  |
 | `quiet`    | `boolean`             | `true`                 | Suppress `dotenv`'s logging.                   |
 | `debug`    | `boolean`             | `false`                | Enable `dotenv`'s debug logging.               |
 | `override` | `boolean`             | `true`                 | Let later files override earlier ones.         |
@@ -72,15 +77,16 @@ Accepts a single `ConfigOption` object.
 
 Returns the result of `dotenv`'s `config()` (`{ parsed, error }`).
 
-> Note: the default `options` object only applies when the argument is omitted
-> entirely. When you pass a partial object, unspecified keys (including `mode`)
-> fall back to `dotenv`'s own defaults rather than the ones above.
+> Each field defaults independently, so passing a partial object (e.g.
+> `config({ mode: 'test' })`) still applies the defaults above to every
+> unspecified field.
 
 ### `ConfigOption`
 
 ```ts
 type ConfigOption = Pick<DotenvConfigOptions, 'debug' | 'quiet' | 'override' | 'encoding'> & {
   mode?: string;
+  cwd?: string;
 };
 ```
 
