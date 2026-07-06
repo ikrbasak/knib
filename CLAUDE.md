@@ -37,3 +37,5 @@ catalog, add a per-package `CLAUDE.md`, and add an initial changeset.
 
 - **`@knib/dotenv`** — layered `.env` loader (Node). See
   `packages/dotenv/CLAUDE.md`.
+- **`@knib/adrin`** — ADR (Architecture Decision Record) management CLI with
+  a terminal UI. See `packages/adrin/README.md`.
