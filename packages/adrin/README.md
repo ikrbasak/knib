@@ -118,8 +118,7 @@ superseded_by: X # only when another ADR supersedes this one
 
 ```bash
 pnpm install
-pnpm dev         # tsdown watch
-pnpm typecheck   # tsc --noEmit
+pnpm tsc         # tsc --noEmit
 pnpm build       # bundle to dist/
 ```
 
