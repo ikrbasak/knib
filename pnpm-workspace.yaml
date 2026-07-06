@@ -24,6 +24,6 @@ catalog:
   oxfmt: ^0.57.0
   react: ^19.2.7
   tsdown: ^0.22.3
-  turbo: ^2.10.2
+  turbo: ^2.10.3
   typescript: ^6.0.3
   wrap-ansi: ^10.0.0
