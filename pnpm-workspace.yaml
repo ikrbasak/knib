@@ -10,7 +10,7 @@ catalogMode: strict
 cleanupUnusedCatalogs: true
 catalog:
   '@11ty/gray-matter': ^2.1.0
-  '@changesets/cli': ^2.31.0
+  '@changesets/cli': ^2.31.1
   '@commitlint/cli': ^21.2.1
   '@commitlint/config-conventional': ^21.2.0
   '@commitlint/types': ^21.2.0
@@ -19,11 +19,11 @@ catalog:
   chalk: ^5.6.2
   commander: ^15.0.0
   dotenv: ^17.4.2
-  ink: ^7.1.0
+  ink: ^7.1.1
   lefthook: ^2.1.10
-  oxfmt: ^0.58.0
+  oxfmt: ^0.59.0
   react: ^19.2.7
-  tsdown: ^0.22.7
+  tsdown: ^0.22.12
   turbo: ^2.10.5
   typescript: ^6.0.3
   wrap-ansi: ^10.0.0
