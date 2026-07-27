@@ -16,7 +16,7 @@ catalog:
   '@commitlint/types': ^21.2.0
   '@types/node': ^26.1.1
   '@types/react': ^19.2.17
-  chalk: ^5.6.2
+  chalk: ^6.0.0
   commander: ^15.0.0
   dotenv: ^17.4.2
   ink: ^7.1.1
