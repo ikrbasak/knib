@@ -26,4 +26,4 @@ catalog:
   tsdown: ^0.22.14
   turbo: ^2.10.10
   typescript: ^7.0.2
-  wrap-ansi: ^10.0.0
+  wrap-ansi: ^10.0.1
