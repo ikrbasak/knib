@@ -15,15 +15,15 @@ catalog:
   '@commitlint/config-conventional': ^21.2.2
   '@commitlint/types': ^21.2.0
   '@types/node': ^26.1.1
-  '@types/react': ^19.2.18
+  '@types/react': ^19.3.0
   chalk: ^6.0.0
   commander: ^15.0.0
   dotenv: ^17.4.2
   ink: ^7.1.1
-  lefthook: ^2.1.10
-  oxfmt: ^0.63.0
-  react: ^19.2.8
-  tsdown: ^0.22.14
-  turbo: ^2.10.10
+  lefthook: ^2.1.12
+  oxfmt: ^0.67.0
+  react: ^19.3.0
+  tsdown: ^0.23.0
+  turbo: ^2.10.12
   typescript: ^7.0.2
   wrap-ansi: ^10.0.0
