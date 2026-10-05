@@ -11,19 +11,19 @@ cleanupUnusedCatalogs: true
 catalog:
   '@11ty/gray-matter': ^3.0.0
   '@changesets/cli': ^2.31.1
-  '@commitlint/cli': ^21.2.2
-  '@commitlint/config-conventional': ^21.2.2
-  '@commitlint/types': ^21.2.0
-  '@types/node': ^26.1.1
-  '@types/react': ^19.2.18
-  chalk: ^6.0.0
+  '@commitlint/cli': ^21.2.3
+  '@commitlint/config-conventional': ^21.2.3
+  '@commitlint/types': ^21.2.3
+  '@types/node': ^26.6.4
+  '@types/react': ^19.3.0
+  chalk: ^6.0.1
   commander: ^15.0.0
   dotenv: ^17.4.2
   ink: ^7.1.1
-  lefthook: ^2.1.10
-  oxfmt: ^0.63.0
-  react: ^19.2.8
-  tsdown: ^0.22.14
-  turbo: ^2.10.10
+  lefthook: ^2.1.16
+  oxfmt: ^0.71.0
+  react: ^19.3.0
+  tsdown: ^0.23.0
+  turbo: ^2.11.7
   typescript: ^7.0.2
-  wrap-ansi: ^10.0.0
+  wrap-ansi: ^10.0.2
